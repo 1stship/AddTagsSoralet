@@ -1,0 +1,34 @@
+{
+  "name": "SORACOM Orbit Development Container",
+  "dockerFile": "Dockerfile",
+  "workspaceMount": "source=${localWorkspaceFolder}/../,target=/workspace,type=bind,consistency=delegated",
+  "workspaceFolder": "/workspace/c",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "extensions": [
+    "ms-vscode.cpptools",
+    "xaver.clang-format",
+    "dtsvet.vscode-wasm",
+    "/root/soracom-orbit-tools-vscode.vsix"
+  ],
+  "containerEnv": {
+    "SORACOM_AUTHKEY_ID": "${localEnv:SORACOM_AUTHKEY_ID}",
+    "SORACOM_AUTHKEY_SECRET": "${localEnv:SORACOM_AUTHKEY_SECRET}",
+    "SORACOM_COVERAGE": "${localEnv:SORACOM_COVERAGE}",
+    "TZ": "Asia/Tokyo"
+  },
+  "remoteEnv": {
+    "SORACOM_AUTHKEY_ID": "${localEnv:SORACOM_AUTHKEY_ID}",
+    "SORACOM_AUTHKEY_SECRET": "${localEnv:SORACOM_AUTHKEY_SECRET}",
+    "SORACOM_COVERAGE": "${localEnv:SORACOM_COVERAGE}",
+    "TZ": "Asia/Tokyo",
+    "PATH": "/emsdk_portable:/emsdk_portable/upstream/emscripten:/emsdk_portable/node/12.9.1_64bit/bin:${containerEnv:PATH}",
+    "EMSDK": "/emsdk_portable",
+    "EM_CACHE": "/emsdk_portable/upstream/emscripten/cache",
+    "EMSDK_NODE": "/emsdk_portable/node/12.9.1_64bit/bin/node"
+  },
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.soracom,target=/root/.soracom,type=bind,consistency=cached"
+  ]
+}

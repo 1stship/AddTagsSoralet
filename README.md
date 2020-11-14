@@ -1,2 +1,3 @@
 # AddTagsSoralet
-add tags to data from soracom air
+SORACOM Airから送られるJSONデータにタグ情報を追加します。
+FunkやHarvestにタグ情報をつけて送るのに便利です。

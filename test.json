@@ -1,0 +1,12 @@
+{
+    "source":{
+      "resourceType": "Subscriber",
+      "resourceId": "440103212980403"
+    },
+    "tags": {
+      "tags": "test1,test2",
+      "test1": "hoge",
+      "test2": "fuga"
+    },
+    "payload": "{\"clickType\":\"SINGLE\"}"
+  }
